@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
+
 export default function About() {
   return (
     <main
-      className="w-full h-screen px-4 md:px-8 py-20 mb-2 sm:mb-0
+      className="w-full h-auto px-4 md:px-8 py-20 lg:py-40 mb-2 sm:mb-0
                 flex flex-col lg:flex-row justify-center items-center gap-6"
     >
       <section className="max-w-[25rem] h-auto">
-        <img src="/images/about-page.jpg" className="object-cover"/>
+        <img src="/images/about-page.jpg" className="object-cover" />
       </section>
 
       <article className="flex flex-col gap-6">
@@ -21,15 +23,19 @@ export default function About() {
           practice, whether or not a person is a mercenary may be a matter of
           degree, as financial and political interests may overlap.
         </p>
-        <div className="flex flex-col gap-6 bg-gray-800 text-white rounded-[2rem] 
+        <div
+          className="flex flex-col gap-6 bg-gray-800 text-white rounded-[2rem] 
                         p-4 md:p-8 justify-center items-center
-        ">
-            <h1 className="text-2xl">
-No more waiting for your allies to save your ass. 
-            </h1>
+        "
+        >
+          <h1 className="text-2xl">
+            No more waiting for your allies to save your ass.
+          </h1>
+          <Link to={"/mercs"}>
             <button className="max-w-40 border-white hover:bg-white hover:text-gray-800">
-                Explore our mercs
+              Explore our mercs
             </button>
+          </Link>
         </div>
       </article>
     </main>

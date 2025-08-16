@@ -19,9 +19,10 @@ p{
     font-family: "Inter", sans-serif;
 }
 
+/** Secondary Buttons Only */
 button{
     border: solid black 2px;
-    padding: 4px 6px;
+    padding: 5px 10px;
     border-radius: 0.6rem;
     cursor: pointer;
     transition: 0.3s;

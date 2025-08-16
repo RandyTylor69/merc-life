@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function About() {
   return (
     <main
@@ -20,14 +22,18 @@ export default function About() {
                         flex flex-col justify-center items-center gap-8
       "
       >
-        <h1 className="text-4xl" >Your war is revolutionary, we can get you the mercenary.</h1>
+        <h1 className="text-4xl">
+          Your war is revolutionary, we can get you the mercenary.
+        </h1>
         <p>
           A mercenary is a private individual who joins an armed conflict for
           personal profit, is otherwise an outsider to the conflict, and is not
-          a member of any other official military. Mercenaries fight for
-          money or other forms of payment rather than for political interests.
+          a member of any other official military. Mercenaries fight for money
+          or other forms of payment rather than for political interests.
         </p>
-        <button>Book your merc</button>
+        <Link to={"/mercs"}>
+          <button>Book your merc</button>
+        </Link>
       </article>
     </main>
   );
