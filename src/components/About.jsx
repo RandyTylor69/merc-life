@@ -7,7 +7,7 @@ export default function About() {
                 flex flex-col lg:flex-row justify-center items-center gap-6"
     >
       <section className="max-w-[25rem] h-auto">
-        <img src="/images/about-page.jpg" className="object-cover" />
+        <img src="/images/about-page.jpg" className="object-cover" alt="img" />
       </section>
 
       <article className="flex flex-col gap-6">
