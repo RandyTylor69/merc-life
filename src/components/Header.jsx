@@ -1,21 +1,36 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
     <header
-      className="px-8 py-2 bg-gray-800 text-white fixed w-full
+      className="px-4 md:px-8 py-2 bg-gray-800 text-white fixed w-full
                         flex flex-row justify-between"
     >
       <section>
-        <Link to="/">
+        <NavLink to="/">
           <h1 className="text-xl">#MERCLIFE</h1>
-        </Link>
+        </NavLink>
       </section>
-      <section className="flex gap-8">
-        <Link to="/about">About</Link>
-        <Link to="/mercs">Mercs</Link>
-      </section>
+      <nav className="flex gap-4 md:gap-8">
+        <NavLink
+          className={({ isActive }) => (isActive ? "active-nav-1" : undefined)}
+          to="host"
+        >
+          Host
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "active-nav-1" : undefined)}
+          to="about"
+        >
+          About
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "active-nav-1" : undefined)}
+          to="mercs"
+        >
+          Mercs
+        </NavLink>
+      </nav>
     </header>
-    
   );
 }
