@@ -13,8 +13,9 @@ export default function Header() {
       </section>
       <section className="flex gap-8">
         <Link to="/about">About</Link>
-        <Link to="/">Mercs</Link>
+        <Link to="/mercs">Mercs</Link>
       </section>
     </header>
+    
   );
 }

@@ -32,3 +32,10 @@ button:hover{
     background-color: black;
     color: white;
 }
+
+i{
+    background-color: aquamarine;
+    padding: 4px 8px;
+    border-radius: 0.8rem;
+    width: fit-content;
+}
