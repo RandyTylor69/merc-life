@@ -1,7 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
+
 export default function Mercs() {
   const [mercs, setMercs] = React.useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const typeFilter = searchParams.get("type");
+
   React.useEffect(() => {
     const fetchMercs = async () => {
       try {
@@ -16,10 +20,31 @@ export default function Mercs() {
     fetchMercs();
   }, []);
 
-  const mercsMapped = mercs.map((merc) => (
-    <div key={merc.id} className="flex flex-col gap-2">
-      <Link to={`/mercs/${merc.id}`}>
-        <img src={merc.imageUrl} />
+  // ---------------
+  // Search Params (filter function)
+  // ---------------
+
+  const displayedMercs = typeFilter
+    ? mercs.filter((m) => m.type.toLowerCase() === typeFilter)
+    : mercs;
+
+  // ----------------
+  // Mapping mercs
+  // ----------------
+
+  const mercsMapped = displayedMercs.map((merc) => (
+    <div key={merc.id} className="flex flex-col gap-2 w-fit">
+      {/** we're also sending the filter type to the children, so when they
+      return back to this page, they get to keep the filter option. */}
+
+      <Link
+        to={merc.id}
+        state={{
+          search: typeFilter ? `?type=${typeFilter}` : ``,
+          typeFilter,
+        }}
+      >
+        <img src={merc.imageUrl} className="max-w-[16rem]" alt="img" />
         <div className="flex flex-row w-full justify-between">
           <h3>{merc.name}</h3>
           <p className="flex flex-col">
@@ -32,12 +57,55 @@ export default function Mercs() {
     </div>
   ));
 
+  console.log(typeFilter);
+
   return (
     <main className="h-full w-full py-20">
       {/** ------- wrapper ------- */}
       <header className="h-auto py-8 px-12">
         <h1 className="text-4xl">Explore our mercenary options</h1>
       </header>
+      {/** ------------------------------ filter nav bar ----------------------*/}
+      <nav
+        className=" w-fit p-4 ml-12
+                       flex flex-row gap-4
+      "
+      >
+        <button
+          onClick={() => {
+            setSearchParams({ type: "rugged" });
+          }}
+          className={`${typeFilter === "rugged" ? `bg-black text-white` : ``}`}
+        >
+          Rugged
+        </button>
+        <button
+          onClick={() => {
+            setSearchParams({ type: "simple" });
+          }}
+          className={`${typeFilter === "simple" ? `bg-black text-white` : ``}`}
+        >
+          Simple
+        </button>
+        <button
+          onClick={() => {
+            setSearchParams({ type: "luxury" });
+          }}
+          className={`${typeFilter === "luxury" ? `bg-black text-white` : ``}`}
+        >
+          Luxury
+        </button>
+        {/** Conditionally render the clear all button only when a filter is active */}
+        {typeFilter != null && (
+          <button
+            onClick={() => {
+              setSearchParams("");
+            }}
+          >
+            Clear All
+          </button>
+        )}
+      </nav>
       <section
         className="grid grid-cols-[repeat(auto-fit,minmax(14rem,1fr))]
         gap-6 md:gap-12

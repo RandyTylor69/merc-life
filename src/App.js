@@ -14,6 +14,7 @@ import HostMercDetail from "./pages/Host/HostMercDetail";
 import HMInfo from "./pages/Host/HostMerc/HMInfo";
 import HMPricing from "./pages/Host/HostMerc/HMPricing";
 import HMPhotos from "./pages/Host/HostMerc/HMPhotos";
+import InvalidPage from "./pages/InvalidPage";
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="about" element={<About />} />
           <Route path="mercs" element={<Mercs />} />
           <Route path="mercs/:id" element={<MercDetail />} />
+          <Route path="*" element={<InvalidPage />} />
 
           <Route path="host" element={<HostLayout />}>
             <Route index element={<Dashboard />} />

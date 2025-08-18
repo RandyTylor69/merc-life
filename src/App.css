@@ -1,50 +1,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
-
-:root{
-    margin:0;
-    padding: 0;
-    
+:root {
+  margin: 0;
+  padding: 0;
 }
 
-h1,h2,h3{
-    font-family: "Alata", sans-serif;
+h1,
+h2,
+h3 {
+  font-family: "Alata", sans-serif;
 }
 
-p{
-    font-family: "Inter", sans-serif;
+p {
+  font-family: "Inter", sans-serif;
 }
 
 /** Secondary Buttons Only */
-button{
-    border: solid black 2px;
-    padding: 5px 10px;
-    border-radius: 0.6rem;
-    cursor: pointer;
-    transition: 0.3s;
+button {
+  border: solid black 2px;
+  padding: 3px 10px;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-button:hover{
-    background-color: black;
-    color: white;
+button:hover {
+  background-color: black;
+  color: white;
 }
 
-i{
-    background-color: aquamarine;
-    padding: 4px 8px;
-    border-radius: 0.8rem;
-    width: fit-content;
+i {
+  background-color: aquamarine;
+  padding: 4px 8px;
+  border-radius: 0.8rem;
+  width: fit-content;
 }
 
-.active-nav-2{
-    color: rgb(85, 85, 85);
-    text-decoration: underline;
+.active-nav-1 {
+  text-decoration: underline;
 }
 
-.active-nav-1{
-    text-decoration: underline;
+.active-nav-2 {
+  color: rgb(85, 85, 85);
+  text-decoration: underline;
 }

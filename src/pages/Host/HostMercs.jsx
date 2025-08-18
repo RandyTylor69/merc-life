@@ -11,7 +11,7 @@ export default function HostMercs() {
 
   if (myMercs) {
     myMercsMapped = myMercs.map((m) => (
-      <Link to={`/host/mercs/${m.id}`}>
+      <Link to={m.id}>
         <div
           key={m.id}
           className="w-[20rem] h-auto p-4 

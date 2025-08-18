@@ -1,8 +1,10 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 export default function MercDetail() {
   const { id } = useParams();
-
+  const location = useLocation();
+  const prevSearchParams = location.state.search
+  const prevFilter = location.state.typeFilter
   const [merc, setMerc] = React.useState(null);
 
   React.useEffect(() => {
@@ -10,6 +12,8 @@ export default function MercDetail() {
       .then((res) => res.json())
       .then((data) => setMerc(data.merc));
   }, []);
+
+  console.log(prevSearchParams)
 
   return (
     <main
@@ -21,8 +25,8 @@ export default function MercDetail() {
         <div className="h-auto w-full flex flex-col gap-14
              max-w-[60rem] p-8
         ">
-          <Link to={"/mercs"}>
-            <p className="underline text-sm text-gray-400">Back to all mercs</p>
+          <Link to={`/mercs${prevSearchParams}`}>
+            <p className="underline text-sm text-gray-400">Back to {prevFilter? prevFilter : "all"} mercs</p>
           </Link>
           <section
             className="h-auto w-full

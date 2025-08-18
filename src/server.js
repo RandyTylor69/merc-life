@@ -13,7 +13,7 @@ createServer({
             price: 50, 
             description: "A disciplined band of Landsknecht swordsmen. Known for their iron discipline and ferocity in holding the line against overwhelming foes.", 
             imageUrl: "/images/m1.png", 
-            type: "infantry" 
+            type: "rugged" 
         })
 
         server.create("merc", { 
@@ -23,7 +23,7 @@ createServer({
             price: 70, 
             description: "Elite longbowmen from the French countryside. Their volleys can blot out the sun, devastating enemy ranks before the melee begins.", 
             imageUrl: "/images/m2.png", 
-            type: "axeman" 
+            type: "luxury" 
         })
 
         server.create("merc", { 
@@ -33,7 +33,7 @@ createServer({
             price: 120, 
             description: "Renowned Italian condottieri cavalry, armored in gleaming steel and trained to shatter enemy lines with thunderous charges.", 
             imageUrl: "/images/m3.png", 
-            type: "flailman" 
+            type: "rugged" 
         })
 
         server.create("merc", { 
@@ -43,7 +43,7 @@ createServer({
             price: 90, 
             description: "A rough band of Czech siege specialists and axemen, feared for their skill in tearing down gates and fortifications.", 
             imageUrl: "/images/m4.png", 
-            type: "siege" 
+            type: "rugged" 
         })
 
         server.create("merc", { 
@@ -53,7 +53,7 @@ createServer({
             price: 100, 
             description: "Dark-cloaked assassins for hire, famed across Italy for their stealth, sabotage, and ruthless elimination of enemy commanders.", 
             imageUrl: "/images/m5.png", 
-            type: "specialist" 
+            type: "simple" 
         })
 
         server.create("merc", { 
@@ -63,7 +63,7 @@ createServer({
             price: 80, 
             description: "A steadfast French company of shield-bearers, masters of forming defensive walls to protect lords, caravans, and castles alike.", 
             imageUrl: "/images/m6.png", 
-            type: "defenders" 
+            type: "simple" 
         })
     },
 
