@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-
+import { FaRegUserCircle } from "react-icons/fa";
 export default function Header() {
   return (
     <header
@@ -29,6 +29,12 @@ export default function Header() {
           to="mercs"
         >
           Mercs
+        </NavLink>
+        <NavLink
+          className={ ` flex justify-center items-center ${({ isActive }) => (isActive ? "active-nav-1" : undefined)}`}
+          to="login"
+        >
+          <FaRegUserCircle />
         </NavLink>
       </nav>
     </header>
